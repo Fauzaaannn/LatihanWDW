@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
+    height: 2000px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, button{
+    font-family:'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+#main-header a {
+    font-family:'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:30px 10%;
+}
+
+#main-header {
+    background-color: #16B3AC;
+    /* position: fixed;
+    width: 100%; */
+}
+
+.logo {
+    cursor: pointer;
+    border-radius: 0%;
+    margin-top: 0px;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+#main-header nav .nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+#main-header nav .nav_links li a:hover {
+    color: #05e2c9;
+}
+
+#main-header nav .cta button {
+    padding: 9px 25px;
+    background-color: #0B9B83;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;    
+    transition: all 0.3s ease 0s;;
+} 
+
+#main-header nav .cta button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Homepage */
+
+.container{
+    width: 37%;
+    margin-left: 170px;
+    margin-top: 55px;
+    overflow: hidden;
+    float: left;
+}
+
+.section{
+    width: 483px;
+    height: 483px;
+    margin-right: 240px;
+    margin-top: 70px;
+    float: right;
+}
+
+img {
+    max-width: 483px;
+    object-fit: cover;
+    object-position: 15% 100%;
+    float: right;
+    border-radius: 25px;
+}
+
+#showcase{
+    background-position: center right;
+    text-align: left;
+}
+
+#showcase h1{
+    color: black;
+    font-size: 46px;
+    line-height: 1.6em;
+    padding-top: 30px;
+    margin-bottom: 5%;
+    font-family:'Poppins', sans-serif;
+}
+
+#main{
+    float: left;
+    width: 70%;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+
+/* Pop Up login */
+
+.wrapper {
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 38.5%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius:20px;
+    backdrop-filter: blur(20px);
+    box-shadow:0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform 1s ease height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #0B9B83;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size:2em;
+    color: black;
+    text-align: center;
+    font-family: Product Sans;
+    font-weight: 400;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px;   
+    margin-left: 0px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    pointer-events: none;
+    transition: .5s;
+    font-family: Product Sans;
+    font-weight: 400;
+}
+
+ /* animasi tulisan naik */
+.input-box input:focus~label, .input-box input:valid~label {
+    top: -5px;
+} 
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;  
+    outline: none; 
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    font-weight: 500;
+    font-family: Product Sans;
+    color: #162938;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    margin-right: 0px;
+    font-size: .9em;
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .form-box form .btn{
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    background: #0B9B83;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    padding: 12px 14px 25px;
+    text-decoration: none;
+    font-family: Product Sans;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.wrapper .form-box form .btn:hover{
+    background-color: #16B3AC;
+}
+
+.login-register{
+    font-size: 1.05em;
+    font-weight: 500;
+    font-family: Product Sans;
+    color: #162938;
+    margin-left:3px;
+    margin-right:3px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.login-link{
+    text-decoration: none;
+    color: #162938;
+}
+
+.login-link:hover{
+    text-decoration: underline;
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.register-link{
+    margin-left: 65px;
+    font-size: .9em;
+    font-family: Product Sans;
+    font-weight: 500;
+    color: #162938;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
